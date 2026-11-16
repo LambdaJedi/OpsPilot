@@ -10,7 +10,8 @@ The current implementation focuses on purchase request submission, rule-based ap
 
 ![OpsPilot Dashboard](docs/screenshots/dashboard.png)
 
-*Dashboard screenshot will be added as development progresses.*
+<img width="1920" height="992" alt="image" src="https://github.com/user-attachments/assets/60b8a7c3-a7dc-49e3-854c-16c0e67ccbb8" />
+
 
 ## The problem
 
