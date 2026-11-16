@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OpsPilot | Business Automation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <h2>OpsPilot</h2>
+                <span>Business Automation</span>
+            </div>
+
+            <nav class="navigation">
+                <a href="#dashboard" class="nav-link active">
+                    Dashboard
+                </a>
+
+                <a href="#requests" class="nav-link">
+                    Purchase Requests
+                </a>
+
+                <a href="#new-request" class="nav-link">
+                    New Request
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>OpsPilot v0.1.0</p>
+                <span>Automation Platform</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <div>
+                    <p class="breadcrumb">Workspace / Dashboard</p>
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="user-profile">
+
+                    <div class="avatar">AD</div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>System Admin</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard -->
+            <section id="dashboard">
+
+                <div class="welcome-section">
+
+                    <div>
+                        <h2>Business Overview</h2>
+
+                        <p>
+                            Monitor purchase requests and automated
+                            approval workflows.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+                        <span>Total Requests</span>
+                        <h3 id="total-requests">0</h3>
+                        <p>All submitted requests</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>Pending Requests</span>
+                        <h3 id="pending-requests">0</h3>
+                        <p>Awaiting approval</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>Approved</span>
+                        <h3 id="approved-requests">0</h3>
+                        <p>Successfully approved</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <span>Rejected</span>
+                        <h3 id="rejected-requests">0</h3>
+                        <p>Rejected requests</p>
+                    </article>
+
+                </div>
+
+
+                <!-- Purchase Requests Table -->
+                <section id="requests" class="requests-section">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Recent Purchase Requests</h2>
+
+                            <p>
+                                Review and monitor submitted requests.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Requester</th>
+                                    <th>Department</th>
+                                    <th>Request</th>
+                                    <th>Amount</th>
+                                    <th>Approval Route</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="requests-table-body">
+
+                                <tr>
+                                    <td colspan="6">
+                                        Loading requests...
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- New Purchase Request -->
+            <section id="new-request" class="form-section">
+
+                <div class="welcome-section">
+
+                    <div>
+                        <h2>New Purchase Request</h2>
+
+                        <p>
+                            Submit a purchase request for review and approval.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-container">
+
+                    <div class="form-header">
+
+                        <h2>Request Information</h2>
+
+                        <p>
+                            Enter the details of the purchase below.
+                        </p>
+
+                    </div>
+
+
+                    <form id="purchase-request-form">
+
+                        <div class="form-grid">
+
+                            <!-- Requester Name -->
+                            <div class="form-group">
+
+                                <label for="requester-name">
+                                    Requester Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="requester-name"
+                                    name="requester_name"
+                                    placeholder="e.g. Thabo Nkosi"
+                                    minlength="2"
+                                    maxlength="120"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Department -->
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="department"
+                                    name="department"
+                                    placeholder="e.g. Finance"
+                                    minlength="2"
+                                    maxlength="100"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Purchase Title -->
+                            <div class="form-group full-width">
+
+                                <label for="request-title">
+                                    Purchase Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="request-title"
+                                    name="title"
+                                    placeholder="e.g. Office Equipment"
+                                    minlength="3"
+                                    maxlength="200"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Description -->
+                            <div class="form-group full-width">
+
+                                <label for="description">
+                                    Purchase Description
+                                </label>
+
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    rows="5"
+                                    placeholder="Explain why this purchase is needed..."
+                                    minlength="5"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <!-- Amount -->
+                            <div class="form-group">
+
+                                <label for="amount">
+                                    Purchase Amount
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    name="amount"
+                                    placeholder="e.g. 18500.00"
+                                    min="0.01"
+                                    max="9999999999.99"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Currency -->
+                            <div class="form-group">
+
+                                <label for="currency">
+                                    Currency
+                                </label>
+
+                                <select
+                                    id="currency"
+                                    name="currency"
+                                    required
+                                >
+
+                                    <option value="ZAR" selected>
+                                        ZAR - South African Rand
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Form Feedback -->
+                        <div
+                            id="form-message"
+                            class="form-message"
+                            role="status"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+
+                            <button
+                                type="reset"
+                                class="btn-secondary"
+                            >
+                                Clear Form
+                            </button>
+
+                            <button
+                                type="submit"
+                                id="submit-request-btn"
+                                class="btn-primary"
+                            >
+                                Submit Request
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
